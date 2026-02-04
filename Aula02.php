@@ -85,7 +85,7 @@
     echo "<b>Usuário não encontrado</b><br>";}
     echo "<hr>";
     // Pausa exercício
-    echo "<h2>Exercício do domínio</h2><br>";
+    echo "<h2>Exercício do domínio</h2>";
 
 
     $emails = "  ADMIN@EMPRESA.COM -,  contato@Site.COM  ,SUPORTE@dominio.com  ,   Vendas@Empresa.com ";
@@ -95,6 +95,44 @@
     $rplEmails = str_replace("-"," ", $arrEmails);
     
     echo "E-mail principal: ".trim(strtolower($rplEmails[0]));
+    echo "<hr>";
+    
+    //Ordena por ordem alfabética (A-Z)
+    sort($todes);
 
+    echo "<br>".implode(", ",$todes);
+    echo "<hr>";
 
+    $usuario = "Sérgio";
+    echo isset($usuario);
+    echo empty($usuario);
+
+    if(empty($usuario)){
+        echo "<br> A varíavel está vazia<br>";
+    }else{
+        echo "<br> A varíavel está com valor<br>";
+    }
+
+    $usuarioAutenticado = $usuario ?? 'Visitante';
+
+    echo "<br><br>$usuarioAutenticado";
+    echo "<hr>";
+    if(!isset($usuario)){
+        $usuarioAutenticado = "Visitante";
+    }else{
+        $usuarioAutenticado = $usuario;
+    }
+
+    //Inicio; Condição de parada; Incremento
+    // for($i = 0;$i<=10;$i++){
+    //     echo "Repetindo várias vezes<br>";
+    // }    
+
+    for($elefantes = 1;$elefantes<=10;$elefantes++){
+        if($elefantes==1){
+            echo "1 elefante incomoda muita gente<br>";
+        }else{  
+            echo  "$elefantes elefantes incomodam muito mais<br>";
+        }
+    }    
 ?>
