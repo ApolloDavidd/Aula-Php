@@ -85,7 +85,7 @@
     echo "<b>Usuário não encontrado</b><br>";}
     echo "<hr>";
     // Pausa exercício
-    echo "<h2>Exercício do domínio</h2><br>";
+    echo "<h2>Exercício do domínio</h2>";
 
 
     $emails = "  ADMIN@EMPRESA.COM -,  contato@Site.COM  ,SUPORTE@dominio.com  ,   Vendas@Empresa.com ";
@@ -95,6 +95,79 @@
     $rplEmails = str_replace("-"," ", $arrEmails);
     
     echo "E-mail principal: ".trim(strtolower($rplEmails[0]));
+    echo "<hr>";
+    
+    //Ordena por ordem alfabética (A-Z)
+    sort($todes);
 
+    echo "<br>".implode(", ",$todes);
+    echo "<hr>";
 
+    $usuario = "Sérgio";
+    echo isset($usuario);
+    echo empty($usuario);
+
+    if(empty($usuario)){
+        echo "<br> A varíavel está vazia<br>";
+    }else{
+        echo "<br> A varíavel está com valor<br>";
+    }
+
+    $usuarioAutenticado = $usuario ?? 'Visitante';
+
+    echo "<br><br>$usuarioAutenticado";
+    echo "<hr>";
+    if(!isset($usuario)){
+        $usuarioAutenticado = "Visitante";
+    }else{
+        $usuarioAutenticado = $usuario;
+    }
+
+    //Inicio; Condição de parada; Incremento
+    // for($i = 0;$i<=10;$i++){
+    //     echo "Repetindo várias vezes<br>";
+    // }   
+
+//     $impar = 3;
+//     for($elefantes = 1;$elefantes<=10;$elefantes++){
+        
+//         if($elefantes==1){
+//             echo "1 elefante incomoda muita gente<br>";
+//         }else if($impar==$elefantes){  
+//             echo "$elefantes elefantes incomodam muita gente<br>";
+//                  $impar = $impar + 2;}
+//         else{
+//             echo "$elefantes elefantes ";
+//             for($i=1; $i<=$elefantes; $i++){
+//                echo "incomodam ";
+//             }
+//             echo "muito mais<br>";
+//         }}
+// 
+
+    // for($elefantes = 1;$elefantes<=10;$elefantes++){
+        
+       
+    //     if(($elefantes % 2) == 1){
+    //          echo "$elefantes elefantes incomodam muita gente<br>";
+    //     }
+    //     else{
+    //         echo "$elefantes elefantes ";
+    //         for($i=1; $i<=$elefantes; $i++){
+    //            echo "incomodam, ";
+    //         }
+    //         echo "muito mais....<br>";
+    //     }}
+
+    $numeros = ['UM','DOIS','TRÊS'];
+    foreach ($numeros as $numero){
+        echo $numero."<br>";
+    }
+    $precos = ["Notebook" => 3500, "Mouse"=>80];
+
+    foreach ($precos as $produto => $valor){
+        echo "O $produto custa $valor<br>";
+    }
+
+    
 ?>
